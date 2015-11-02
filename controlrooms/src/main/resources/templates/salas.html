@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/save" method="post">
+		<input name="nome" />
+	</form>
+	<ul>
+	<li th:each="sala:${salas}" th:text="${sala.nome}"></li>
+	</ul>
+</body>
+</html>
