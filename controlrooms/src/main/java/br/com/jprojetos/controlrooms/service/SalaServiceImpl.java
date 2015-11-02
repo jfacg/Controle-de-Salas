@@ -6,7 +6,6 @@ import javax.inject.Inject;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
@@ -18,26 +17,36 @@ import br.com.jprojetos.controlrooms.repositorio.SalaRepositorio;
 
 @Service
 @Validated
-public class SalaServicempl implements SalaService {
+public class SalaServiceImpl implements SalaService {
 		
 	private final SalaRepositorio salaRepositorio;
 
 	@Inject
-	public SalaServicempl (final SalaRepositorio salaRepositorio){
+	public SalaServiceImpl (final SalaRepositorio salaRepositorio){
 		this.salaRepositorio = salaRepositorio;
 	}
 	
 	@Override
 	@Transactional
-	@Modifying
 	public void save(@NotNull @Valid Sala sala) throws SalaJaExistenteException{
 		Sala existente = getByNumSala(sala.getNumeroSala());
-
+		
 		if(existente != null){
 			throw new SalaJaExistenteException();
 		}
 		salaRepositorio.save(sala);
 	}
+	
+	@Override
+	@Transactional
+	public void update(@NotNull @Valid Sala sala){
+		Sala existente = getByNumSala(sala.getNumeroSala());
+		existente.setAndarSala(sala.getAndarSala());
+		existente.setDescricaoSala(sala.getDescricaoSala());
+		existente.setNumeroSala(sala.getNumeroSala());
+		salaRepositorio.save(existente);
+	}
+	
 
 	@Override
 	public Sala getByNumSala(int numeroSala){
@@ -69,15 +78,6 @@ public class SalaServicempl implements SalaService {
 		return (List<Sala>) salaRepositorio.findAll();
 	}
 
-	@Override
-	@Transactional
-	public void update(Sala sala){
-		Sala existente = getById(sala.getIdSala());
-		existente.setAndarSala(sala.getAndarSala());
-		existente.setDescricaoSala(sala.getDescricaoSala());
-	
-		salaRepositorio.save(existente);
-	}
 
 
 }

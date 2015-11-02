@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Sala {
@@ -80,53 +79,11 @@ public class Sala {
 			this.descricaoSala = descricaoSala;
 		}
 
-		/** 
-		 * Getter method
-		 * @return the intituicao
-		 */
-//		public Instituicao getIntituicao() {
-//			return intituicao;
-//		}
-
-		/**
-		 * Setter method
-		 * @param intituicao the intituicao to set
-		 */
-//		public void setIntituicao(Instituicao intituicao) {
-//			this.intituicao = intituicao;
-//		}
-
 		@Override
 		public String toString() {
 			return "Sala [idSala=" + idSala + ", numeroSala=" + numeroSala + ", andar=" + andarSala + ", descricao="
 					+ descricaoSala + "]";
 		}
 
-		@Override
-		public int hashCode() {
-			final int prime = 31;
-			int result = 1;
-			result = prime * result + numeroSala;
-			return result;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			Sala other = (Sala) obj;
-			if (numeroSala != other.numeroSala)
-				return false;
-			return true;
-		}
-
-
-
-
-
-
+		
 }

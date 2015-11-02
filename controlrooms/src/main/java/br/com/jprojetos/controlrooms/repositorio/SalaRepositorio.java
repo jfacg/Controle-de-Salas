@@ -1,12 +1,14 @@
 package br.com.jprojetos.controlrooms.repositorio;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import br.com.jprojetos.controlrooms.entity.Sala;
 
-public interface SalaRepositorio extends CrudRepository<Sala, Integer> {
+@Repository
+public interface SalaRepositorio extends JpaRepository<Sala, Integer> {
 
 	public final static String FIND_BY_ID = "SELECT p FROM Sala p WHERE p.idSala = :id";
 	public final static String FIND_BY_NUM_SALA = "SELECT p FROM Sala p WHERE p.numeroSala = :numeroSala";

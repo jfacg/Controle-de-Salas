@@ -67,7 +67,8 @@ public class SalaController {
 			return new ResponseEntity<String>(HttpStatus.CREATED);
 
 		} catch (SalaJaExistenteException e) {
-			return new ResponseEntity<String>(HttpStatus.CONFLICT);
+			salaService.update(sala);
+			return new ResponseEntity<String>(HttpStatus.OK);
 		} catch (Exception e) {
 			return new ResponseEntity<String>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}

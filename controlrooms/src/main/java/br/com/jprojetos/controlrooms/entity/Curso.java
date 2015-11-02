@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Curso {
@@ -24,21 +23,25 @@ public class Curso {
 	// @JoinColumn(name="instituicao_curso")
 //	private Instituicao instituicao;
 
+	
 	/**
-	 * Class constructor method
-	 * 
-	 * @param nomeCurso
-	 * @param coordenador
+	 * Método getter
+	 * @return the idCruso
 	 */
-	public Curso(String nomeCurso, String coordenador) {
-		super();
-		this.nomeCurso = nomeCurso;
-		this.coordenador = coordenador;
+	public int getIdCruso() {
+		return idCruso;
 	}
 
 	/**
-	 * Getter method
-	 * 
+	 * Método setter
+	 * @param idCruso the idCruso to set
+	 */
+	public void setIdCruso(int idCruso) {
+		this.idCruso = idCruso;
+	}
+
+	/**
+	 * Método getter
 	 * @return the nomeCurso
 	 */
 	public String getNomeCurso() {
@@ -46,18 +49,15 @@ public class Curso {
 	}
 
 	/**
-	 * Setter method
-	 * 
-	 * @param nomeCurso
-	 *            the nomeCurso to set
+	 * Método setter
+	 * @param nomeCurso the nomeCurso to set
 	 */
 	public void setNomeCurso(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
 	}
 
 	/**
-	 * Getter method
-	 * 
+	 * Método getter
 	 * @return the descricaoCurso
 	 */
 	public String getDescricaoCurso() {
@@ -65,18 +65,15 @@ public class Curso {
 	}
 
 	/**
-	 * Setter method
-	 * 
-	 * @param descricaoCurso
-	 *            the descricaoCurso to set
+	 * Método setter
+	 * @param descricaoCurso the descricaoCurso to set
 	 */
 	public void setDescricaoCurso(String descricaoCurso) {
 		this.descricaoCurso = descricaoCurso;
 	}
 
 	/**
-	 * Getter method
-	 * 
+	 * Método getter
 	 * @return the coordenador
 	 */
 	public String getCoordenador() {
@@ -84,41 +81,11 @@ public class Curso {
 	}
 
 	/**
-	 * Setter method
-	 * 
-	 * @param coordenador
-	 *            the coordenador to set
+	 * Método setter
+	 * @param coordenador the coordenador to set
 	 */
 	public void setCoordenador(String coordenador) {
 		this.coordenador = coordenador;
-	}
-
-	/**
-	 * Getter method
-	 * 
-	 * @return the instituicao
-	 */
-//	public Instituicao getInstituicao() {
-//		return instituicao;
-//	}
-
-	/**
-	 * Setter method
-	 * 
-	 * @param instituicao
-	 *            the instituicao to set
-//	 */
-//	public void setInstituicao(Instituicao instituicao) {
-//		this.instituicao = instituicao;
-//	}
-
-	/**
-	 * Getter method
-	 * 
-	 * @return the idCruso
-	 */
-	public int getIdCruso() {
-		return idCruso;
 	}
 
 	@Override
