@@ -31,6 +31,16 @@ public class Sala {
 			return idSala;
 		}
 
+		/**
+		 * Método setter
+		 * @param idSala the idSala to set
+		 */
+		public void setIdSala(int idSala) {
+			this.idSala = idSala;
+		}
+
+
+
 		/** 
 		 * Getter method
 		 * @return the numeroSala

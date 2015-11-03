@@ -10,36 +10,30 @@ import javax.persistence.Id;
 public class Curso {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int idCruso;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int idCurso;
 	@Column(nullable = false)
 	private String nomeCurso;
 	@Column(nullable = false)
 	private String descricaoCurso;
 	@Column(nullable = false)
 	private String coordenador;
-
-	// @ManyToOne
-	// @JoinColumn(name="instituicao_curso")
-//	private Instituicao instituicao;
-
+	
 	
 	/**
 	 * Método getter
-	 * @return the idCruso
+	 * @return the idCurso
 	 */
 	public int getIdCruso() {
-		return idCruso;
+		return idCurso;
 	}
-
 	/**
 	 * Método setter
-	 * @param idCruso the idCruso to set
+	 * @param idCurso the idCurso to set
 	 */
-	public void setIdCruso(int idCruso) {
-		this.idCruso = idCruso;
+	public void setIdCruso(int idCurso) {
+		this.idCurso = idCurso;
 	}
-
 	/**
 	 * Método getter
 	 * @return the nomeCurso
@@ -47,7 +41,6 @@ public class Curso {
 	public String getNomeCurso() {
 		return nomeCurso;
 	}
-
 	/**
 	 * Método setter
 	 * @param nomeCurso the nomeCurso to set
@@ -55,7 +48,6 @@ public class Curso {
 	public void setNomeCurso(String nomeCurso) {
 		this.nomeCurso = nomeCurso;
 	}
-
 	/**
 	 * Método getter
 	 * @return the descricaoCurso
@@ -63,7 +55,6 @@ public class Curso {
 	public String getDescricaoCurso() {
 		return descricaoCurso;
 	}
-
 	/**
 	 * Método setter
 	 * @param descricaoCurso the descricaoCurso to set
@@ -71,7 +62,6 @@ public class Curso {
 	public void setDescricaoCurso(String descricaoCurso) {
 		this.descricaoCurso = descricaoCurso;
 	}
-
 	/**
 	 * Método getter
 	 * @return the coordenador
@@ -79,7 +69,6 @@ public class Curso {
 	public String getCoordenador() {
 		return coordenador;
 	}
-
 	/**
 	 * Método setter
 	 * @param coordenador the coordenador to set
@@ -87,29 +76,8 @@ public class Curso {
 	public void setCoordenador(String coordenador) {
 		this.coordenador = coordenador;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nomeCurso == null) ? 0 : nomeCurso.hashCode());
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Curso other = (Curso) obj;
-		if (nomeCurso == null) {
-			if (other.nomeCurso != null)
-				return false;
-		} else if (!nomeCurso.equals(other.nomeCurso))
-			return false;
-		return true;
-	}
+	
+	
+	
+	
 }

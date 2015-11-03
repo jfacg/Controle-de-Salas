@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.jprojetos.controlrooms.entity.Sala;
-import br.com.jprojetos.controlrooms.exception.SalaAlreadyExistsException;
 import br.com.jprojetos.controlrooms.exception.SalaJaExistenteException;
 import br.com.jprojetos.controlrooms.exception.SalaNaoExistenteException;
 import br.com.jprojetos.controlrooms.service.SalaService;
@@ -21,13 +20,6 @@ import br.com.jprojetos.controlrooms.service.SalaService;
 @RestController
 public class SalaController {
 
-	// private final ParticipantService participantService;
-	//
-	// @Inject
-	// public ParticipantController(final ParticipantService participantService)
-	// {
-	// this.participantService = participantService;
-	// }
 	private final SalaService salaService;
 
 	@Inject
@@ -60,7 +52,7 @@ public class SalaController {
 	}
 	
 	@RequestMapping(value="/sala", method = RequestMethod.POST)
-	public ResponseEntity<String> saveSala(@RequestBody Sala sala) throws SalaAlreadyExistsException {
+	public ResponseEntity<String> saveSala(@RequestBody Sala sala){
 
 		try {
 			salaService.save(sala);
