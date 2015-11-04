@@ -1,10 +1,13 @@
 package br.com.jprojetos.controlrooms.entity;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Curso {
@@ -18,6 +21,9 @@ public class Curso {
 	private String descricaoCurso;
 	@Column(nullable = false)
 	private String coordenador;
+	
+	@OneToMany(mappedBy="curso")
+	private List<Sala> salas;
 	
 	
 	/**

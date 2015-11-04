@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Sala {
@@ -18,10 +20,9 @@ public class Sala {
 		private int andarSala;
 		@Column(nullable=false)
 		private String descricaoSala;
-		
-//		@ManyToOne
-//		@JoinColumn(name="instituicao_sala")
-//		private Instituicao intituicao;
+		@ManyToOne
+		@JoinColumn(name="idCurso")
+		private Curso curso;
 		
 		/** 
 		 * Getter method

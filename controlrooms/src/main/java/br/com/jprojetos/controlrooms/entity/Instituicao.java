@@ -7,6 +7,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.OneToMany;
+
+
 
 
 
@@ -18,6 +23,12 @@ public class Instituicao {
 	private int idInstituicao;
 	@Column(nullable = false)
 	private String nomeInstituicao;
+
+//	private List<Sala> salas;
+	
+	
+	
+	
 	/**
 	 * Método getter
 	 * @return the idInstituicao
